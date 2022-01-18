@@ -16,6 +16,7 @@
 		2B91C2902796F87A00315CF7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91C28F2796F87A00315CF7 /* WelcomeViewController.swift */; };
 		2B91C2922796F92F00315CF7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91C2912796F92F00315CF7 /* InfoViewController.swift */; };
 		2B91C2942796F96500315CF7 /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91C2932796F96500315CF7 /* PicturesViewController.swift */; };
+		2BD832A3279728DF00CDEC71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD832A2279728DF00CDEC71 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2B91C28F2796F87A00315CF7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2B91C2912796F92F00315CF7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		2B91C2932796F96500315CF7 /* PicturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		2BD832A2279728DF00CDEC71 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				2B91C28E2796E2C800315CF7 /* ViewControllers */,
 				2B91C28B2796E28500315CF7 /* Storyboards */,
+				2B91C2982796FA7000315CF7 /* Models */,
 				2B91C28D2796E2B300315CF7 /* Resources */,
 				2B91C28C2796E29F00315CF7 /* Configs */,
 			);
@@ -106,6 +109,14 @@
 				2B91C2932796F96500315CF7 /* PicturesViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2B91C2982796FA7000315CF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BD832A2279728DF00CDEC71 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				2B91C27A2796E21000315CF7 /* SceneDelegate.swift in Sources */,
 				2B91C2922796F92F00315CF7 /* InfoViewController.swift in Sources */,
 				2B91C2942796F96500315CF7 /* PicturesViewController.swift in Sources */,
+				2BD832A3279728DF00CDEC71 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
