@@ -9,11 +9,58 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
     
-
+    @IBOutlet var loginButton: UIButton!
+    
+    private let users = User.getUser()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.layer.cornerRadius = 10
+    }
+    
+    @IBAction func loginButtonPressed() {
+        guard let userName = userNameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        for user in users {
+            if userName == user.loginName && password == user.password {
+                return
+            }
+        }
+        showAlert(title: "Wrong login or password", message: "Please try again")
+    }
+    
+    @IBAction func chooseSideButtonsPressed(_ sender: UIButton) {
+        sender.tag == 0
+        ? showHelp(title: "Force is strong in you", message: "Login: \(users[1].loginName)\n Password: \(users[1].password)")
+        : showHelp(title: "Join the Empire", message: "Login: \(users[0].loginName)\n Password: \(users[0].password)")
+    }
+    
+}
+
+extension LoginViewController {
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.passwordTextField.text = ""
+        }
+        present(alert, animated: true)
+        alert.addAction(okAction)
+    }
+    
+    private func showHelp(title: String, message: String) {
+        let help = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        present(help, animated: true)
+        help.addAction(okAction)
     }
 
 }
+
+
 
