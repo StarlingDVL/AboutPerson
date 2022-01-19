@@ -15,11 +15,26 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     
     private let users = User.getUser()
+    private var currentUser: User!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 10
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.user = currentUser
+            } else if let navigationVC = viewController as? UINavigationController {
+                let infoVC = navigationVC.topViewController as! InfoViewController
+                infoVC.user = currentUser
+            }
+        }
     }
     
     @IBAction func loginButtonPressed() {
@@ -28,6 +43,7 @@ class LoginViewController: UIViewController {
         
         for user in users {
             if userName == user.loginName && password == user.password {
+               currentUser = User(loginName: user.loginName, password: user.password, person: user.person)
                 return
             }
         }
@@ -38,6 +54,11 @@ class LoginViewController: UIViewController {
         sender.tag == 0
         ? showHelp(title: "Force is strong in you", message: "Login: \(users[1].loginName)\n Password: \(users[1].password)")
         : showHelp(title: "Join the Empire", message: "Login: \(users[0].loginName)\n Password: \(users[0].password)")
+    }
+    
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
 }
