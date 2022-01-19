@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         welcomeLabel.text = "Welcome, \(user.person.fullName)"
-        
+
         welcomeImageView.image = UIImage(named: "StarWars")
     }
 }

@@ -15,6 +15,7 @@ class PicturesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pictureImageView.image = UIImage(named: user.person.image)
     }
 }
