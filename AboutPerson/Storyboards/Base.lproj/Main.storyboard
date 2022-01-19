@@ -195,9 +195,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti0-bV-78X">
-                                <rect key="frame" x="136" y="272" width="48" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti0-bV-78X">
+                                <rect key="frame" x="124.5" y="266" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -216,10 +216,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="InfoLabel" destination="ti0-bV-78X" id="WG1-vc-t5K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioz-Vl-8TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2895" y="78"/>
+            <point key="canvasLocation" x="2895" y="77.112676056338032"/>
         </scene>
         <!--Pictures View Controller-->
         <scene sceneID="O35-6v-224">
@@ -230,7 +233,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkp-wT-Lxo">
-                                <rect key="frame" x="16" y="131" width="288" height="348"/>
+                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dkp-wT-Lxo" secondAttribute="height" multiplier="1:1" id="2Ry-1y-ICt"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Ie-er-xEZ"/>
@@ -238,11 +244,13 @@
                         <constraints>
                             <constraint firstItem="6Ie-er-xEZ" firstAttribute="trailing" secondItem="dkp-wT-Lxo" secondAttribute="trailing" constant="16" id="AaN-eH-TYe"/>
                             <constraint firstItem="dkp-wT-Lxo" firstAttribute="leading" secondItem="6Ie-er-xEZ" secondAttribute="leading" constant="16" id="RY7-oM-Gt4"/>
-                            <constraint firstItem="6Ie-er-xEZ" firstAttribute="bottom" secondItem="dkp-wT-Lxo" secondAttribute="bottom" constant="40" id="cT4-Eo-RC4"/>
-                            <constraint firstItem="dkp-wT-Lxo" firstAttribute="top" secondItem="6Ie-er-xEZ" secondAttribute="top" constant="40" id="z5K-Wr-GlI"/>
+                            <constraint firstItem="dkp-wT-Lxo" firstAttribute="centerY" secondItem="0my-8N-FZD" secondAttribute="centerY" id="SlD-q5-be5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rIA-i2-IQn"/>
+                    <connections>
+                        <outlet property="pictureImageView" destination="dkp-wT-Lxo" id="vgA-rl-GHC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYa-Xk-dc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
