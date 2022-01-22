@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
         
         for user in users {
             if userName == user.loginName && password == user.password {
-               currentUser = User(loginName: user.loginName, password: user.password, person: user.person)
+               currentUser = user
                 return
             }
         }
@@ -52,8 +52,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func chooseSideButtonsPressed(_ sender: UIButton) {
         sender.tag == 0
-        ? showHelp(title: "Force is strong in you", message: "Login: \(users[1].loginName)\n Password: \(users[1].password)")
-        : showHelp(title: "Join the Empire", message: "Login: \(users[0].loginName)\n Password: \(users[0].password)")
+        ? showHelp(title: "Force is strong in you", message: "Login: \(users.last?.loginName ?? "Unknown")\n Password: \(users.last?.password ?? "Unknown")")
+        : showHelp(title: "Join the Empire", message: "Login: \(users.first?.loginName ?? "Unknown")\n Password: \(users.first?.password ?? "Unknown")")
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
